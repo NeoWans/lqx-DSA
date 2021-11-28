@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 template<typename Iterator>
-void ShellSort(Iterator first, Iterator last) {
+void shellSort(Iterator first, Iterator last) {
   int len = last - first, step;
   while (step < len / 3)
     step = 3 * step + 1;

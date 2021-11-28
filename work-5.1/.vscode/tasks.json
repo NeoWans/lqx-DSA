@@ -1,0 +1,24 @@
+{
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "pretask1",
+      "command": "${workspaceFolder}/build/bin/gen-tastbench",
+      "args": [
+        ">doc/testbench.txt"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "调试器生成的任务。"
+    }
+  ],
+  "version": "2.0.0"
+}

@@ -2,8 +2,9 @@
 #include <queue>
 #include <iostream>
 template<typename Iterator>
-inline void radixSort(Iterator first, Iterator last, unsigned radix = 32) {
+inline void radixSort(Iterator first, Iterator last) {
   using namespace std;
+  static const unsigned radix = 32;
   vector<deque<decltype((*first)++)>> buf(radix + 1);
   vector<decltype((*first)++)> powRadix;
   auto maxEle = *first;

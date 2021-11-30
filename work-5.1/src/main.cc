@@ -25,7 +25,7 @@ public:
       ++compCnt;
       return x < y;
     };
-    // radixSort(v[0].begin(), v[0].end(), comp);
+    radixSort(v[0].begin(), v[0].end(), comp);
     vc.push_back(compCnt); compCnt = 0;
     shellSort(v[1].begin(), v[1].end(), comp);
     vc.push_back(compCnt); compCnt = 0;

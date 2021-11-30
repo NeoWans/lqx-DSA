@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
-#include "RadixSort.hh"
-#include "ShellSort.hh"
+#include "radixSort.hh"
+#include "shellSort.hh"
+#include "quickSort.hh"
+#include "heapSort.hh"
+#include "mergeSort.hh"
 using namespace std;
 #define endl '\n'
 class Solution {

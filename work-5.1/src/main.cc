@@ -6,8 +6,8 @@ using namespace std;
 class Solution {
 public:
   int n;
-  uint64_t compCnt;
   vector<int> v[5];
+  const string sorts[5] = {"radixSort", "shellSort", "quickSort", "mergeSort", "heapSort"};
   void solve() {
     cin >> n;
     for (int i = 0; i < n; ++i) {
@@ -16,17 +16,24 @@ public:
     }
     for (int i = 1; i < 5; ++i)
       v[i] = v[0];
-    auto comp = [&](const int& x, const int& y) {
+    uint64_t compCnt = 0;
+    vector<uint64_t> vc;
+    auto comp = [&compCnt](const int& x, const int& y) {
       ++compCnt;
       return x < y;
     };
-    radixSort(v[0].begin(), v[0].end(), comp);
+    // radixSort(v[0].begin(), v[0].end(), comp);
+    vc.push_back(compCnt); compCnt = 0;
     shellSort(v[1].begin(), v[1].end(), comp);
-    for (int i = 0; i < 5; ++i) {
-      for (const auto& x : v[i])
-        cout << x << " ";
-      cout << endl;
-    }
+    vc.push_back(compCnt); compCnt = 0;
+    // quickSort(v[2].begin(), v[2].end(), comp);
+    vc.push_back(compCnt); compCnt = 0;
+    // mergeSort(v[3].begin(), v[3].end(), comp);
+    vc.push_back(compCnt); compCnt = 0;
+    // heapSort(v[4].begin(), v[4].end(), comp);
+    vc.push_back(compCnt); compCnt = 0;
+    for (int i = 0; i < 5; ++i)
+      cout << sorts[i] << "交换次数：" << vc[i] << endl;
   }
 };
 Solution s;

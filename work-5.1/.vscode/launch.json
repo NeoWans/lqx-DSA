@@ -9,7 +9,10 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/build/bin/${workspaceFolderBasename}",
-      "args": [],
+      "args": [
+        "<doc/testbench.txt",
+        ">doc/${workspaceFolderBasename}.out.txt"
+      ],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],

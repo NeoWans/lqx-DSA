@@ -4,12 +4,12 @@ template<typename Iterator, typename CompFunc>
 inline void radixSort(Iterator first, Iterator last, const CompFunc& comp) {
   static const unsigned radix = 32;
   using namespace std;
-  vector<deque<decltype((*first)++)>> buf(radix + 1);
-  vector<decltype((*first)++)> powRadix;
+  vector<deque<uint64_t>> buf(radix + 1);
+  vector<uint64_t> powRadix;
   auto maxEle = *first;
   for (auto it = first; it != last; ++it)
     maxEle = max(maxEle, *it);
-  __uint128_t t = 1;
+  uint64_t t = 1;
   do {
     powRadix.push_back(t);
   } while ((t *= radix) / radix <= maxEle);

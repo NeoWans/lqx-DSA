@@ -25,15 +25,15 @@ public:
       ++compCnt;
       return x < y;
     };
-    // radixSort(v[0].begin(), v[0].end(), comp);
+    radixSort(v[0].begin(), v[0].end(), comp);
     vc.push_back(compCnt); compCnt = 0;
     shellSort(v[1].begin(), v[1].end(), comp);
     vc.push_back(compCnt); compCnt = 0;
-    // quickSort(v[2].begin(), v[2].end(), comp);
+    quickSort(v[2].begin(), v[2].end(), comp);
     vc.push_back(compCnt); compCnt = 0;
-    // mergeSort(v[3].begin(), v[3].end(), comp);
+    mergeSort(v[3].begin(), v[3].end(), comp);
     vc.push_back(compCnt); compCnt = 0;
-    // heapSort(v[4].begin(), v[4].end(), comp);
+    heapSort(v[4].begin(), v[4].end(), comp);
     vc.push_back(compCnt); compCnt = 0;
     for (int i = 0; i < 5; ++i)
       cout << sorts[i] << "交换次数：" << vc[i] << endl;

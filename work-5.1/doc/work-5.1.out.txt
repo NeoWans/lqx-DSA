@@ -1,5 +1,0 @@
-radixSort交换次数：0
-shellSort交换次数：250900
-quickSort交换次数：221274
-mergeSort交换次数：133616
-heapSort交换次数：235328

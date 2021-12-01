@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-template<typename Iterator, typename CompFunc>
-inline void shellSort(Iterator first, Iterator last, const CompFunc& comp) {
+template<typename Iterator, typename CompFunc, typename SwapFunc>
+inline void shellSort(Iterator first, Iterator last, const CompFunc& comp, const SwapFunc& swap) {
   using namespace std;
   int len = last - first, step;
   while (step < len / 3)

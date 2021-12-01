@@ -1,8 +1,8 @@
 #pragma once
 #include <bits/stdc++.h>
 
-template<typename Iterator, typename CompFunc>
-inline void heapify(Iterator base, Iterator first, Iterator last, const CompFunc& comp) {
+template<typename Iterator, typename CompFunc, typename SwapFunc>
+inline void heapify(Iterator base, Iterator first, Iterator last, const CompFunc& comp, const SwapFunc& swap) {
   using namespace std;
   Iterator fa = first;
   Iterator son = (fa - base) * 2 + 1 + base;
@@ -17,14 +17,14 @@ inline void heapify(Iterator base, Iterator first, Iterator last, const CompFunc
   }
 }
 
-template<typename Iterator, typename CompFunc>
-inline void heapSort(Iterator first, Iterator last, const CompFunc& comp) {
+template<typename Iterator, typename CompFunc, typename SwapFunc>
+inline void heapSort(Iterator first, Iterator last, const CompFunc& comp, const SwapFunc& swap) {
   using namespace std;
   int len = last - first;
   for(auto i = len / 2 - 1 + first; i >= first; i --)
-    heapify(first, i, last - 1, comp);
+    heapify(first, i, last - 1, comp, swap);
   for(auto i = last - 1; i != first; i --) {
     swap(*first, *i);
-    heapify(first, first, i - 1, comp);
+    heapify(first, first, i - 1, comp, swap);
   }
 }
